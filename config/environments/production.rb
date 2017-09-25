@@ -89,28 +89,28 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # SimpleMail.options = {
-  #   :via => :smtp,
-  #   :via_options => {
-  #       :address => 'smtp.gmail.com',
-  #       :port => '587',
-  #       :domain => 'heroku.com',
-  #       user_name: ENV['GMAIL_USER'],
-  #       password: ENV['GMAIL_PASS'],
-  #       :authentication => :plain,
-  #       :enable_starttls_auto => true
-  #   }
-  # }
-
-  config.action_mailer.delivery_method = :smtp
-  # SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => "gmail.com",
-      :user_name => ENV['GMAIL_USER'],
-      :password => ENV['GMAIL_PASS'],
-      :authentication => "plain",
-      :enable_starttls_auto => true
+  SimpleMail.options = {
+    :via => :smtp,
+    :via_options => {
+        :address => 'smtp.gmail.com',
+        :port => '587',
+        :domain => 'gmail.com',
+        user_name: ENV['GMAIL_USER'],
+        password: ENV['GMAIL_PASS'],
+        :authentication => :plain,
+        :enable_starttls_auto => true
+    }
   }
+
+  # config.action_mailer.delivery_method = :smtp
+  # # SMTP settings for gmail
+  # config.action_mailer.smtp_settings = {
+  #     :address => "smtp.gmail.com",
+  #     :port => 587,
+  #     :domain => "gmail.com",
+  #     :user_name => ENV['GMAIL_USER'],
+  #     :password => ENV['GMAIL_PASS'],
+  #     :authentication => "plain",
+  #     :enable_starttls_auto => true
+  # }
 end
