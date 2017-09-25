@@ -94,7 +94,7 @@ Rails.application.configure do
     :via_options => {
         :address => 'smtp.gmail.com',
         :port => '587',
-        :domain => 'example.com',
+        :domain => 'heroku.com',
         user_name: ENV['GMAIL_USER'],
         password: ENV['GMAIL_PASS'],
         :authentication => :plain,
