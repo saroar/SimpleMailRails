@@ -1,5 +1,5 @@
 class NotifyMailer < ApplicationMailer
-  default from: "saroar9@gmail.com"
+  # default from: "saroar9@gmail.com"
 
   def notify_email(notify)
     @notify = notify
