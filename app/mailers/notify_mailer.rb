@@ -4,7 +4,7 @@ class NotifyMailer < ApplicationMailer
   def notify_email(notify)
     @notify = notify
     SimpleMail.mail(
-      to: "lemiszewski@gmx.com",
+      to: @notify.email,
       subject: "Wow my gem is working Awesome Job Saroar",
       :html_body => '<h1>Hello there!</h1>',
       :body => "In case you can't read html, Hello there."

@@ -70,6 +70,6 @@ class NotifiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notify_params
-      params.require(:notify).permit(:name, :content)
+      params.require(:notify).permit(:name, :content, :email)
     end
 end
