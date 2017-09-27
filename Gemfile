@@ -58,5 +58,4 @@ gem 'figaro'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 
-gem 'dropzonejs-rails'
 gem 'SimpleCSVUploder'

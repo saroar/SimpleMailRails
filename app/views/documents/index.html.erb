@@ -2,21 +2,22 @@
 
 <h2>Listing documents</h2>
 
-<table>
+<table class="table table-inverse table-striped">
   <thead>
     <tr>
-      <th>Filename</th>
-      <th></th>
-      <th></th>
+      <th>#</th>
+      <th>File Name</th>
+      <th>Date</th>
+      <th>Download</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @documents.each do |document| %>
+    <% @documents.each_with_index do |document, idx| %>
       <tr>
-        <td><%= document.filename %></td>
-        <td><%= button_to 'Download', document, method: :get %></td>
-        <td><%= button_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="row"><%= idx + 1 %></th>
+        <td><%= document.filename%></td>
+        <th><%= document.created_at %></th>
+        <th><%= button_to 'Download', document, method: :get, class: 'btn btn-danger'%></th>
       </tr>
     <% end %>
   </tbody>
@@ -24,6 +25,5 @@
 
 <br>
 
-<button type="button" class="btn">
-  <%= link_to 'New Document', new_document_path %>
-</button>
+
+<%= link_to 'New Document', new_document_path, class: "btn btn-success" %>

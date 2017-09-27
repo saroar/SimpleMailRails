@@ -28,11 +28,9 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(document_params)
-    accepted_formats = [".csv"]
 
     respond_to do |format|
-      if accepted_formats.include? File.extname(@document.filename)
-        @document.save
+      if @document.save
         format.html { redirect_to documents_path, notice: 'Document was successfully created.' }
         format.json { render :show, status: :created, location: @document }
       else
