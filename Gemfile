@@ -53,3 +53,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'SimpleMail', '~> 0.1.0'
 gem 'figaro'
+
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'jquery-rails'
+
+gem 'dropzonejs-rails'
+gem 'SimpleCSVUploder'
